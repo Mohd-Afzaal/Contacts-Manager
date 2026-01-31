@@ -49,64 +49,59 @@ contacts-manager/
 
 ## Setup & Installation
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/contacts-manager.git
+## How to Run
+
+Clone the repository
+
+git clone https://github.com/Mohd-Afzaal/contacts-manager.git
 cd contacts-manager
-2. Create and activate virtual environment
-python -m venv venv
+
+
+Create & activate virtual environment (recommended)
+
 Windows
-
+```bash
+python -m venv venv
 venv\Scripts\activate
-Linux / macOS
+```
 
+Linux / macOS
+```bash
+python -m venv venv
 source venv/bin/activate
-3. Install dependencies
+```
+
+Install dependencies
+```bash
 pip install -r requirements.txt
+```
+
+Run the app
+```bash
+python app.py
+```
+
+Open your browser
+```
+http://127.0.0.1:5000/
+```
 
 SCSS Compilation
-This project uses SCSS for styling.
 
-Run this in a separate terminal while developing:
+Styles are written in SCSS and must be compiled before they appear.
 
+Compile once
+```bash
+sass static/styles.scss static/styles.css
+```
+
+Auto-compile during development
+```bash
 sass --watch static:static
-Compiled CSS files are intentionally ignored in Git.
+```
 
-Run the App
-python app.py
-Then open your browser at:
-
-http://127.0.0.1:5000
-Search Functionality
-Search works across name, email, and phone
-
-Handles empty results gracefully
-
-Clear search option included
-
-Learning Outcomes
-Understanding Flask routing and request handling
-
-Working with SQLAlchemy ORM
-
-Handling form validation and errors
-
-Using sessions for user-specific data
-
-Writing cleaner SCSS and structured UI components
-
-Proper Git hygiene (.gitignore, no venv uploads)
-
-Future Improvements
-User authentication (login / register)
-
-Pagination for large contact lists
-
-Contact categories or tags
-
-Export contacts to CSV
-
-Switch to PostgreSQL for production
+⚠️ Compiled CSS files are ignored in Git.
+Make sure the watcher is running while developing.
 
 📄 License
 This project is licensed under the MIT License.
