@@ -103,10 +103,12 @@ sass --watch static:static
 ⚠️ Compiled CSS files are ignored in Git.
 Make sure the watcher is running while developing.
 
-📄 License
+## License
 This project is licensed under the MIT License.
 
-✨ Author
-Aish
+## Author
+
+Mohd Afzaal
+
 Learning Flask by building real projects instead of tutorials.
 
