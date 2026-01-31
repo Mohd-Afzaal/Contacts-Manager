@@ -1,72 +1,112 @@
-# Contacts-Manager
+# Contacts Manager (Flask CRUD App)
 
-A clean and simple **Contacts Manager** web app built with **Flask** and **SQLAlchemy**.  
-Focused on practicing real-world CRUD patterns, search, session handling, and SCSS-based UI design.
-
----
-
-## ✨ Highlights
-
-- Full **CRUD** functionality for contacts
-- **Search** by name, email, or phone
-- Session-based data separation (each user sees only their own contacts)
-- Clean, card-based UI styled with **SCSS**
-- Flash messages for validation and feedback
+A simple **Contacts Manager** web application built using **Flask**, **SQLAlchemy**, and **SCSS**.  
+This project helped me practice full **CRUD operations**, basic **search functionality**, session-based user separation, and frontend styling with SCSS.
 
 ---
 
-## 🧱 Tech Stack
+## Features
 
-- **Flask**
-- **SQLAlchemy**
-- **SQLite**
-- **Jinja2**
-- **SCSS**
-
----
-
-## 📸 Preview
-
-> *(Add screenshots here if you want — optional but recommended)*
+- Create, view, update, and delete contacts
+- Search contacts by **name, email, or phone number**
+- Session-based contact isolation (each user sees only their own contacts)
+- Styled UI using **SCSS**
+- Flash messages for validation and errors
+- Responsive, card-based contact layout
 
 ---
 
-## 🚀 Getting Started
+## Tech Stack
 
+- **Backend:** Flask, SQLAlchemy
+- **Frontend:** HTML, Jinja2, SCSS
+- **Database:** SQLite
+- **Styling:** SCSS (compiled to CSS)
+- **Sessions:** Flask session with UUID-based user IDs
+
+---
+
+## Project Structure
+
+├── app.py
+├── requirements.txt
+├── README.md
+├── templates/
+│ ├── index.html
+│ ├── add.html
+│ └── update.html
+├── static/
+│ └── styles.scss
+└── .gitignore
+
+
+---
+
+## Setup & Installation
+
+### 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/contacts-manager.git
 cd contacts-manager
+2. Create and activate virtual environment
+python -m venv venv
+Windows
+
+venv\Scripts\activate
+Linux / macOS
+
+source venv/bin/activate
+3. Install dependencies
 pip install -r requirements.txt
-python app.py
-For styling during development:
+
+SCSS Compilation
+This project uses SCSS for styling.
+
+Run this in a separate terminal while developing:
 
 sass --watch static:static
-🧠 What This Project Demonstrates
-Backend CRUD logic with Flask
+Compiled CSS files are intentionally ignored in Git.
 
-ORM-based database modeling
+Run the App
+python app.py
+Then open your browser at:
 
-Query filtering and search logic
+http://127.0.0.1:5000
+Search Functionality
+Search works across name, email, and phone
 
-Session handling without authentication
+Handles empty results gracefully
 
-Clean frontend structure with SCSS
+Clear search option included
 
-Proper Git practices (.gitignore, no venv, no compiled files)
+Learning Outcomes
+Understanding Flask routing and request handling
 
-🔮 Possible Improvements
-Authentication (login/register)
+Working with SQLAlchemy ORM
 
-Pagination & sorting
+Handling form validation and errors
 
-Contact tagging or categories
+Using sessions for user-specific data
 
-Export to CSV
+Writing cleaner SCSS and structured UI components
 
-Production database (PostgreSQL)
+Proper Git hygiene (.gitignore, no venv uploads)
+
+Future Improvements
+User authentication (login / register)
+
+Pagination for large contact lists
+
+Contact categories or tags
+
+Export contacts to CSV
+
+Switch to PostgreSQL for production
 
 📄 License
-MIT License
+This project is licensed under the MIT License.
 
-Built by Aish
-Learning backend development by building real things.
+✨ Author
+Aish
+Learning Flask by building real projects instead of tutorials.
+
