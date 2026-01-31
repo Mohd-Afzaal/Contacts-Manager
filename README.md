@@ -27,7 +27,7 @@ This project helped me practice full **CRUD operations**, basic **search functio
 ---
 
 ## Project Structure
-
+```
 contacts-manager/
 ├── app.py                 # Main Flask application
 ├── requirements.txt       # Python dependencies
@@ -44,7 +44,7 @@ contacts-manager/
 │
 └── venv/                  # Virtual environment (ignored)
 
-
+```
 ---
 
 ## Setup & Installation
