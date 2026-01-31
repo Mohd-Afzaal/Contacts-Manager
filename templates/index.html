@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block head %}
+<title>Home Page</title>
+{% endblock %} {% block body %}
+<div class="container">
+  <div class="content">
+    {% if contacts | length < 1 and not request.args.get('search') %}
+    <h1>Welcome to contacts manager</h1>
+    <p class="no-contacts">Start by adding a new contact!</p>
+    {% else %}
+    <h1>Contact List</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <form action="/" method="GET">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            name="search"
+            placeholder="Search by name, email, or phone..."
+            value="{{ request.args.get('search', '') }}"
+          />
+        </div>
+        <button type="submit" class="btn-search">Search</button>
+        {% if request.args.get('search') %}
+        <a href="/" class="btn-clear">Clear</a>
+        {% endif %}
+      </form>
+    </div>
+
+    {% if contacts | length < 1 %}
+    <p class="no-contacts">
+      No contacts found matching "{{ request.args.get('search') }}" <br />
+      <p>Clear search to see all contacts.</p>
+    </p>
+    {% else %}
+    {% endif %}
+    <div class="contacts-grid">
+      {% for contact in contacts %}
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="user-icon">👤</i>
+        </div>
+        <h3>{{ contact.name }}</h3>
+        <div class="contact-details">
+          <p><span class="icon">📧</span> {{ contact.email }}</p>
+          <p><span class="icon">📱</span> {{ contact.phone }}</p>
+          {% if contact.notes %}
+          <p><span class="icon">📝</span> {{ contact.notes }}</p>
+          {% else %}
+          <p><span class="icon">📝</span></p>
+          {% endif %}
+          <p class="date-added">
+            Added: {{ contact.created_at.strftime('%b %d, %Y') }}
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="update" href="/update/{{ contact.id }}">Update</a>
+          <a class="delete" href="/delete/{{ contact.id }}">Delete</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <br /><br />
+    <a href="/add"><button class="btn_add">✚ Add Contact</button></a>
+  </div>
+</div>
+{% endblock %}
