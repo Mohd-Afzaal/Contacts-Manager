@@ -28,16 +28,21 @@ This project helped me practice full **CRUD operations**, basic **search functio
 
 ## Project Structure
 
-├── app.py
-├── requirements.txt
-├── README.md
-├── templates/
-│ ├── index.html
-│ ├── add.html
-│ └── update.html
-├── static/
-│ └── styles.scss
-└── .gitignore
+contacts-manager/
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
+├── .gitignore             # Ignored files (venv, db, compiled CSS)
+│
+├── templates/             # Jinja2 HTML templates
+│   ├── index.html         # Contact list + search
+│   ├── add.html           # Add new contact form
+│   └── update.html        # Update contact form
+│
+├── static/                # Static assets
+│   └── styles.scss        # SCSS source file (compiled locally)
+│
+└── venv/                  # Virtual environment (ignored)
 
 
 ---
